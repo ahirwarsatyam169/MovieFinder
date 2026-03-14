@@ -7,37 +7,44 @@ const previous_btn = document.querySelector("#previous_btn");
 const next_btn = document.querySelector("#next_btn");
 const spinner = document.querySelector(".spinner");
 
-// S E A R C H   B U T T O N
 let currentMovie = "";
 let currentIndex = 1;
+search_bar.focus();
+defaultMovies();
+// S E A R C H   B U T T O N
 function searchMovie() {
-    let movieName = search_bar.value;
-    if(movieName !== currentMovie){
+
+    let movieName = search_bar.value.trim();        // from searchbar takes the name
+    if(movieName === ""){
+        return;
+    };
+    if(movieName !== currentMovie){                 
         currentIndex = 1;
         currentMovie = movieName;
     }
     let url = `https://www.omdbapi.com/?s=${movieName}&page=${currentIndex}&apikey=eebe14fc`;
     
-    spinner.style.display = "block";
+    spinner.style.display = "block";      //Loading spinner
     
     fetch(url)
     .then(Response => Response.json())
         .then(data => {
-            console.log(data);
+            
             spinner.style.display = "none";
+            
             if (data.Search) {
                 movie_container.innerHTML = "";
                 data.Search.forEach(info => {
                     
-                    let card = document.createElement("div");
-                    let movie_img = document.createElement("img");
-                    let movie_name = document.createElement("h2");
-                    let movie_year = document.createElement("h3");
+                    let card = document.createElement("div");           //  making elements
+                    let movie_img = document.createElement("img");      //    ^^^^^^^^^
+                    let movie_name = document.createElement("h2");      //    ^^^^^^^^^
+                    let movie_year = document.createElement("h3");      //    ^^^^^^^^^
                     
-                    card.classList.add("card");
-                    movie_img.classList.add("movie_img");
-                    movie_name.classList.add("movie_name");
-                    movie_year.classList.add("movie_year");
+                    card.classList.add("card");                         //adding classes
+                    movie_img.classList.add("movie_img");               // ^^^^^^^^
+                    movie_name.classList.add("movie_name");             // ^^^^^^^^
+                    movie_year.classList.add("movie_year");             // ^^^^^^^^
                     
                     if(info.Poster !== "N/A"){
                         movie_img.src = info.Poster;
@@ -89,8 +96,14 @@ load_more.addEventListener("click",function(){
 
 })
 
-previous_btn.addEventListener("click",function(){
+previous_btn.addEventListener("onclick",function(){
     currentIndex--;
     searchMovie();
 })
 
+function defaultMovies(){
+    search_bar.value = "Batman";
+    searchMovie();
+
+
+}
