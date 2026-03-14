@@ -4,7 +4,6 @@ const search_btn = document.querySelector("#search_btn");
 const search_bar = document.querySelector("#search_bar");
 const load_more = document.querySelector("#load_more");
 const previous_btn = document.querySelector("#previous_btn");
-const next_btn = document.querySelector("#next_btn");
 const spinner = document.querySelector(".spinner");
 const noMovie = document.querySelector(".noMovie");
 
@@ -71,12 +70,12 @@ function searchMovie() {
                 });
                 load_more.style.display = "flex";
                 previous_btn.style.display = "flex";
-                next_btn.style.display = "flex";
+                noMovie.style.display = "none";
                 
             }
             else {
                 movie_container.innerHTML = '';
-                noMovie.style.display = "flex";
+                noMovie.style.display = "block";
                 load_more.style.display = "none";
                 previous_btn.style.display = "none";
             }
