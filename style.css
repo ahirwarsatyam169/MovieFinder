@@ -176,3 +176,13 @@ button:active{
 #previous_btn:hover{
     transform: scale(0.9);
 }
+
+.noMovie{
+    text-align: center;
+    box-shadow: 0 0 15px black;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    padding: 10px;
+    box-sizing: border-box;
+}
