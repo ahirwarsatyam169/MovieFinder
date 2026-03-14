@@ -6,6 +6,7 @@ const load_more = document.querySelector("#load_more");
 const previous_btn = document.querySelector("#previous_btn");
 const next_btn = document.querySelector("#next_btn");
 const spinner = document.querySelector(".spinner");
+const noMovie = document.querySelector(".noMovie");
 
 let currentMovie = "";
 let currentIndex = 1;
@@ -71,9 +72,13 @@ function searchMovie() {
                 load_more.style.display = "flex";
                 previous_btn.style.display = "flex";
                 next_btn.style.display = "flex";
+                
             }
             else {
-                console.log("movie not found");
+                movie_container.innerHTML = '';
+                noMovie.style.display = "flex";
+                load_more.style.display = "none";
+                previous_btn.style.display = "none";
             }
         })
         
