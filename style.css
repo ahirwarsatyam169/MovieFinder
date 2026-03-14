@@ -117,8 +117,7 @@ margin-top:5px;
 }
 
 #load_more,
-#previous_btn,
-#next_btn{
+#previous_btn{
     display: none;
     padding: 2px;
     margin: 10px;
@@ -126,11 +125,13 @@ margin-top:5px;
     height: 30px;
     align-items: center;
     box-shadow: 0 0 2px black;
+    background-color: rgb(105, 103, 103);
+    color: #2e2e2e;
     
 }
 .card:hover{
     border: white;
-    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 10px white;
     padding: 5px;
     transition: 0.4s;
 }
@@ -156,6 +157,8 @@ margin-top:5px;
 }
 button:active{
     transform: scale(0.9);
+    border: 5px white;
+    
 }
 
 @media (max-width:600px){
@@ -168,4 +171,8 @@ button:active{
         object-fit: contain;
     }
     
+}
+#load_more:hover,
+#previous_btn:hover{
+    transform: scale(0.9);
 }
