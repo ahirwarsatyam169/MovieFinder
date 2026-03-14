@@ -14,7 +14,7 @@ defaultMovies();
 // S E A R C H   B U T T O N
 function searchMovie() {
 
-    let movieName = search_bar.value.trim();        // from searchbar takes the name
+    let movieName = search_bar.value.trim();        
     if(movieName === ""){
         return;
     };
