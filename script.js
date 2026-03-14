@@ -96,7 +96,7 @@ load_more.addEventListener("click",function(){
 
 })
 
-previous_btn.addEventListener("onclick",function(){
+previous_btn.addEventListener("click",function(){
     currentIndex--;
     searchMovie();
 })
