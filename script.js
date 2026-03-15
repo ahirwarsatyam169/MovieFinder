@@ -101,8 +101,13 @@ load_more.addEventListener("click",function(){
 })
 
 previous_btn.addEventListener("click",function(){
-    currentIndex--;
-    searchMovie();
+    if(currentIndex === 1){
+        return;
+    }
+    else{
+        currentIndex--;
+        searchMovie();
+    }
 })
 
 function defaultMovies(){
