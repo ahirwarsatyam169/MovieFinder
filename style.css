@@ -134,6 +134,8 @@ margin-top:5px;
     box-shadow: 0 0 10px white;
     padding: 5px;
     transition: 0.4s;
+    transition-delay: 100ms;
+
 }
 
 .spinner{
